@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.product-title {
+    margin: 120px 20px 20px;
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-card .price {
+    font-size: 1.25rem;
+    color: #b12704;
+    margin: 5px 0;
+}
+
+.add-to-cart-button {
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #11ebd9;
+}
+
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .product-card .price {
+        font-size: 1rem;
+    }
+
+    .add-to-cart-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        background-color: #ffa41c;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #ff8c00;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #ffa41c;
+    }
+}
+
+.animate {
+    animation: pop 0.4s ease;
+}
+
+.add-to-cart-button {
+    transition: transform 0.3s, background-color 0.3s;
+}

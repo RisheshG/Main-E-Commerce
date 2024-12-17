@@ -1,0 +1,165 @@
+.categories-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  overflow: hidden;
+}
+
+.section-title, .section-subtitle {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.product-set {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* Space between cards */
+  justify-items: center; /* Center cards in their grid cells */
+  margin-bottom: 50px;
+}
+
+/* Category Card Styling */
+.category-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(0) rotate(var(--rotation)); /* Dynamic rotation */
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Subtle transition */
+}
+
+/* Random rotation for a funky look */
+.category-card:nth-child(odd) {
+  --rotation: -5deg;
+}
+
+.category-card:nth-child(even) {
+  --rotation: 5deg;
+}
+
+.category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.category-card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  flex-grow: 1;
+}
+
+/* Shop Now Button */
+.shop-now-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #e0f7fa; /* Light cyan background for a refreshing look */
+  color: #333; /* Dark text color */
+  border: 1px solid #b2ebf2; /* Light border that matches the background */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.shop-now-btn:hover {
+  background: linear-gradient(135deg, #b2ebf2, #80deea); /* Gradient for a nice effect on hover */
+  transform: scale(1.03); /* Slightly larger scale on hover */
+  color: #fff; /* Change text color to white for contrast */
+}
+
+
+/* Triggering Animation when Cards Become Visible */
+.product-set .category-card {
+  opacity: 1;
+  transform: translateY(0) rotate(0); /* Cards smoothly appear without rotation */
+}
+
+/* Decorative SVG Shape */
+.decorative-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .product-set {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  .category-card {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .category-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Fade in/out classes */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease-out forwards;
+}
+
+.product-set {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* Space between cards */
+  justify-items: center; /* Center items */
+  margin-bottom: 50px;
+  transition: opacity 0.4s ease-out; /* Adjust to maintain smooth transition */
+}

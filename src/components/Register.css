@@ -1,0 +1,105 @@
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px 18px;
+    margin-bottom: 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #fafafa;
+    font-size: 17px;
+    color: #333;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #a29bfe;
+    box-shadow: 0 4px 10px rgba(162, 155, 254, 0.3);
+    outline: none;
+}
+
+input::placeholder {
+    color: #9e9e9e;
+}
+
+button[type="submit"], .login-btn, .register-btn {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #80deea, #e0f7fa);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.3s ease;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover, .login-btn:hover, .register-btn:hover {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    transform: scale(1.05);
+}
+
+input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
+    border-color: #dfe6e9;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #2d3436;
+    text-align: center;
+    font-weight: 600;
+}
+
+.user-exists-message {
+    color: #ff4757;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.login-btn {
+    background-color: #55efc4;
+}
+
+.login-btn:hover {
+    background-color: #00b894;
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 25px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        font-size: 15px;
+    }
+
+    button[type="submit"], .login-btn, .register-btn {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,168 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+  
+  .navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-left, .navbar-right {
+    width: 20%;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+  }
+  
+  .navbar-list li a {
+    text-transform: uppercase;
+    color: #d3d3d3;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-list li a:hover {
+    color: red;
+  }
+  
+  .navbar-list li a:hover::after {
+    width: 100%;
+  }
+  
+  .navbar-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .cart-button {
+    color: #d3d3d3;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .cart-button::before {
+    content: "🛒 ";
+  }
+  
+  .cart-button:hover {
+    color: red;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .register-button {
+    color: #d3d3d3;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .register-button:hover {
+    color: red;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .logout-button {
+    color: #d3d3d3;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    color: red;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-list {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .navbar-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .navbar-left, .navbar-right {
+      display: none;
+    }
+  
+    .navbar-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+  .navbar-logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 0.1cm;
+  }
+
+  .logo-link {
+    text-decoration: none;
+    color: #d3d3d3;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .logo-link:hover {
+    color: red;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
